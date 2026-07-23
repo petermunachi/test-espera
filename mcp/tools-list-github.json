@@ -1,0 +1,24 @@
+{
+  "tools": [
+    {
+      "name": "create_pull_request",
+      "description": "Create a pull request on GitHub",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "body": { "type": "string" }
+        },
+        "required": ["title"]
+      }
+    },
+    {
+      "name": "list_repos",
+      "description": "List repositories",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ]
+}

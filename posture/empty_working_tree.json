@@ -1,0 +1,48 @@
+{
+  "scan_version": "1",
+  "machine": {
+    "agents": [],
+    "mcp_servers": []
+  },
+  "repo": {
+    "posture": {
+      "policy_gaps": [
+        "cicd_approval_not_configured",
+        "db_writes_not_blocked",
+        "network_not_blocked",
+        "package_check_disabled",
+        "package_publish_not_blocked",
+        "shell_weak_policy"
+      ]
+    },
+    "working_tree": {
+      "paths": [],
+      "classified": [],
+      "actions": [],
+      "decisions": []
+    }
+  },
+  "recommendations": [
+    {
+      "id": "block_secret_reads",
+      "title": "Block secret exposure (committed secrets or secret-file reads)",
+      "paid_enforcement": true,
+      "detail": "Add secret_file_read to block_shell_reasons in espera.yaml"
+    },
+    {
+      "id": "block_network",
+      "title": "Restrict outbound shell network access (block_network: true)",
+      "paid_enforcement": true
+    },
+    {
+      "id": "block_package_publish",
+      "title": "Block or gate package publishing (block_package_publish: true)",
+      "paid_enforcement": true
+    },
+    {
+      "id": "scan_dirty_paths",
+      "title": "Make local changes, use --paths, or run espera scan --full for a repo-wide posture sweep",
+      "paid_enforcement": false
+    }
+  ]
+}

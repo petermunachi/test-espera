@@ -1,0 +1,2 @@
+# Empty fixture lockfile for dependency-scanner tests.
+# Replace with a real lockfile to exercise trivy/osv-scanner enrichment.

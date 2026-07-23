@@ -1,0 +1,4 @@
+# CODEOWNERS for Espera dogfood (Phase 11)
+*       @default-team
+/src/auth/    @security-team
+/src/billing/ @billing-team

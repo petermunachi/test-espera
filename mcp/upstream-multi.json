@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "deno",
+      "args": [
+        "run",
+        "--allow-read",
+        "--allow-env",
+        "examples/test-espera/mcp/fake_filesystem_server.ts"
+      ]
+    },
+    "custom": {
+      "command": "deno",
+      "args": [
+        "run",
+        "examples/test-espera/mcp/fake_custom_server.ts"
+      ]
+    }
+  }
+}

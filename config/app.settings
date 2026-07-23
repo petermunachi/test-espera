@@ -1,0 +1,3 @@
+API_KEY=fake-local-key-12345
+DEBUG=true
+LOG_LEVEL=info

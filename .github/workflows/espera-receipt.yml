@@ -1,0 +1,47 @@
+# Example workflow: export Espera receipt artifacts for PR merge-gate verification.
+#
+# Requires `espera` on the runner PATH (self-hosted runner or install step).
+# Phase 5 will resolve artifacts via `<!-- espera-ci-run: owner/repo/run_id -->`.
+
+name: Espera receipt export
+
+on:
+  workflow_dispatch:
+
+jobs:
+  export-receipt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run supervised session
+        run: |
+          espera setup --force
+          espera run echo --intent "CI receipt export" -- echo "espera-ci"
+        env:
+          HOME: ${{ github.workspace }}/.espera-home
+
+      - name: Export receipt to branch path
+        id: export
+        run: |
+          SESSION_ID=$(ls -t "$HOME/.espera/sessions" | head -1)
+          echo "session_id=$SESSION_ID" >> "$GITHUB_OUTPUT"
+          espera pr export --session-id "$SESSION_ID" --json
+
+      - name: Upload receipt artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: espera-receipt
+          path: |
+            .espera/pr/receipt.json
+            .espera/pr/receipt.sig
+            .espera/pr/action-graph.json
+          if-no-files-found: error
+
+      - name: Print PR markers
+        run: |
+          echo "Session marker for PR body:"
+          echo "<!-- espera-session: ${{ steps.export.outputs.session_id }} -->"
+          echo ""
+          echo "CI artifact marker (resolved in merge-gate Phase 5):"
+          echo "<!-- espera-ci-run: ${{ github.repository }}/${{ github.run_id }} -->"

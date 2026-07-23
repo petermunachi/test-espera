@@ -1,0 +1,34 @@
+# Killer demo project config (payments-api style fixture).
+# approvals keys are action *reason* strings (e.g. ci_cd_path), not path globs.
+agent: echo
+
+policy:
+  bundle: policy/base
+
+sensitive_paths:
+  - "src/billing/**"
+  - ".github/workflows/**"
+
+sensitive_reasons:
+  - billing_path
+
+approval_reasons:
+  - ci_cd_path
+
+approvals:
+  ci_cd_path: security-team
+
+block_shell_reasons:
+  - secret_file_read
+  - production_sql_delete
+  - pipe_to_shell
+  - destructive_rm
+  - privilege_escalation
+  - privileged_container
+  - cloud_iam_change
+
+block_network: true
+block_package_publish: true
+
+github:
+  enabled: true

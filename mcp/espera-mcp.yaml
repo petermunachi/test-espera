@@ -1,0 +1,10 @@
+listen: stdio
+upstream: upstream-mcp.json
+policy:
+  bundle: ../policy/base
+servers:
+  github:
+    enabled: false
+metadata:
+  alert_on_tool_description_change: true
+  alert_on_new_write_tool: true

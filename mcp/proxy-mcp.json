@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "espera-filesystem": {
+      "command": "espera",
+      "args": [
+        "mcp-proxy",
+        "--config",
+        "examples/test-espera/mcp/upstream-mcp.json",
+        "--server",
+        "filesystem"
+      ]
+    }
+  }
+}
