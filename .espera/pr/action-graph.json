@@ -1,0 +1,49 @@
+{
+  "session_id": "82d084b2-94ce-48a1-b0df-da4c6fae7fc2",
+  "agent": "sh",
+  "human_user": "petermunachiali",
+  "repo": "test-espera",
+  "intent": "read env",
+  "cwd": "/Users/petermunachiali/test-espera",
+  "child_pid": 2088,
+  "started_at": "2026-07-24T23:25:15.003484Z",
+  "ended_at": "2026-07-24T23:25:15.482112Z",
+  "interrupted": false,
+  "actions": [
+    {
+      "type": "shell_command",
+      "command": "sh -c bash scripts/cat_env.sh",
+      "risk": "low",
+      "reason": "shell_command",
+      "timestamp": "2026-07-24T23:25:15.042185Z"
+    },
+    {
+      "type": "shell_command",
+      "command": "bash scripts/cat_env.sh",
+      "risk": "low",
+      "reason": "shell_command",
+      "timestamp": "2026-07-24T23:25:15.042189Z"
+    },
+    {
+      "type": "shell_command",
+      "command": "cat .env",
+      "risk": "critical",
+      "reason": "secret_file_read",
+      "timestamp": "2026-07-24T23:25:15.081806Z"
+    },
+    {
+      "type": "file_write",
+      "path": ".espera/active-session.json",
+      "risk": "low",
+      "reason": "normal_code",
+      "timestamp": "2026-07-24T23:25:15.107096Z"
+    }
+  ],
+  "decisions": [
+    {
+      "action": "block",
+      "reason": "secret file read"
+    }
+  ],
+  "status": "blocked"
+}
