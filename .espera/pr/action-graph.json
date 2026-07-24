@@ -1,0 +1,58 @@
+{
+  "session_id": "53697fca-be45-464a-a812-5f8ec044aa15",
+  "agent": "sh",
+  "human_user": "petermunachiali",
+  "repo": "test-espera",
+  "intent": "update deploy workflow",
+  "cwd": "/Users/petermunachiali/test-espera",
+  "child_pid": 1816,
+  "started_at": "2026-07-24T23:25:10.806058Z",
+  "ended_at": "2026-07-24T23:25:11.566141Z",
+  "exit_code": 0,
+  "interrupted": false,
+  "actions": [
+    {
+      "type": "shell_command",
+      "command": "sh -c echo \"# cicd demo change\" >> .github/workflows/deploy.yml",
+      "risk": "low",
+      "reason": "shell_command",
+      "timestamp": "2026-07-24T23:25:10.836382Z"
+    },
+    {
+      "type": "shell_command",
+      "command": "echo \"# cicd demo change\" >> .github/workflows/deploy.yml",
+      "risk": "low",
+      "reason": "shell_command",
+      "timestamp": "2026-07-24T23:25:10.836385Z"
+    },
+    {
+      "type": "file_write",
+      "path": ".github/workflows/deploy.yml",
+      "risk": "critical",
+      "reason": "ci_cd_path",
+      "timestamp": "2026-07-24T23:25:10.874796Z"
+    },
+    {
+      "type": "file_write",
+      "path": ".espera/active-session.json",
+      "risk": "low",
+      "reason": "normal_code",
+      "timestamp": "2026-07-24T23:25:10.874825Z"
+    },
+    {
+      "type": "git_diff",
+      "path": ".github/workflows/deploy.yml",
+      "risk": "critical",
+      "reason": "ci_cd_path",
+      "timestamp": "2026-07-24T23:25:11.497945Z"
+    }
+  ],
+  "decisions": [
+    {
+      "action": "require_approval",
+      "approver": "security-team",
+      "reason": "ci/cd workflow change"
+    }
+  ],
+  "status": "finalized"
+}

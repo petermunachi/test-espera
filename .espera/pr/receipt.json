@@ -1,0 +1,31 @@
+{
+  "receipt_version": "1",
+  "receipt_id": "bca075f4-c0d3-4389-b157-eccc2931feab",
+  "session_id": "53697fca-be45-464a-a812-5f8ec044aa15",
+  "repo": "test-espera",
+  "commit_sha": "2fc5c342413ee6f174348fd56d1e5ba4c9fce453",
+  "head_commit_sha": "2fc5c342413ee6f174348fd56d1e5ba4c9fce453",
+  "base_ref": "demo/violation-cicd",
+  "intent": "update deploy workflow",
+  "agent": "sh",
+  "human_user": "petermunachiali",
+  "started_at": "2026-07-24T23:25:10.806058Z",
+  "ended_at": "2026-07-24T23:25:11.566141Z",
+  "status": "finalized",
+  "action_count": 5,
+  "decision_count": 1,
+  "decisions": [
+    {
+      "action": "require_approval",
+      "approver": "security-team",
+      "reason": "ci/cd workflow change"
+    }
+  ],
+  "blocked": [],
+  "approved": [],
+  "redacted_actions": 0,
+  "credentials_minted": 0,
+  "codeowner_approvals": 0,
+  "action_graph_sha256": "94345e30d4bea5b3f065bf9c1128d0e472019da663499a0a1c5f7b17764c461b",
+  "signing_key_fingerprint": "3ec23cfafcaa626ec8f19ba2d1b38628ef54bf002fe7afa5068b26e9fb55a2a0"
+}
