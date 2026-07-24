@@ -1,0 +1,31 @@
+{
+  "session_id": "c0a8ca85-e75d-450d-8677-9c3646ecbf6a",
+  "agent": "echo",
+  "human_user": "petermunachiali",
+  "repo": "test-espera",
+  "intent": "looks innocent",
+  "cwd": "/Users/petermunachiali/test-espera",
+  "child_pid": 1330,
+  "started_at": "2026-07-24T23:25:02.869734Z",
+  "ended_at": "2026-07-24T23:25:03.272815Z",
+  "exit_code": 0,
+  "interrupted": false,
+  "actions": [
+    {
+      "type": "shell_command",
+      "command": "echo hello",
+      "risk": "low",
+      "reason": "shell_command",
+      "timestamp": "2026-07-24T23:25:02.899806Z"
+    },
+    {
+      "type": "file_write",
+      "path": ".espera/active-session.json",
+      "risk": "low",
+      "reason": "normal_code",
+      "timestamp": "2026-07-24T23:25:02.924684Z"
+    }
+  ],
+  "decisions": [],
+  "status": "finalized"
+}
